@@ -3,12 +3,12 @@ on:
   push:
     branches: [ main ]
 jobs:
-  build:
-    name: Build
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
       - name: Build container image
         run: docker build -t gtest .
       - name: Test in container
