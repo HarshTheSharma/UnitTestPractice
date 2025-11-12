@@ -3,6 +3,16 @@
 
 using std::string;
 
+/* Receives a string and returns a count of how many case-sensitive unique characters there are. If there are duplicate instances of the same character it should only count as a single character. Even if characters look similar, as long as they have distinct ASCII values, they should qualify as unique characters. */
+unsigned int unique_characters(const std::string& input) {
+    std::unordered_map<char, bool> seen;
+    for (char ch : input) {
+        seen[ch] = true;
+    }
+    return static_cast<unsigned int>(seen.size());
+}
+
+
 /*
   The function receives a string counts how many times the same character
   occurs at the beginning of the string, before any other characters (or the
